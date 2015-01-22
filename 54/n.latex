@@ -1,0 +1,202 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\newcommand*\laplace{\mathop{}\!\mathbin\bigtriangleup}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\begin{document}
+
+\title{$C^1$ isometric imbeddings}
+\author{John Nash}
+\date{1954}
+
+\maketitle
+
+\subsection*{Introduction}
+
+The question of whether or not in general a Riemannian manifold can be isometrically imbedded  in Euclidean space has been open for some time. The local problem was discussed by Schlaefli \cite{schlaefli} in 1873 and treated by Janet \cite{janet} and Cartan \cite{cartan} in 1926 and 1927.
+
+This question comes up in connection with the alternative extrinsic and intrinsic approaches to differential geometry. The historically older extrinsic attitude sees a manifold as imbedded in Euclidean space and its metric as derived from the metric of the surrounding space. The metric is considered to be given abstractly from the intrinsic viewpoint.
+
+This intrinsic approach has seemed the more general, so long as there was no contravening evidence. Now it develops that the two attitudes are equally general, and any (positive) metric on a manifold can be realized by an appropriate imbedding in Euclidean space.
+
+This paper is limited to the construction of $C^1$ isometric imbeddings. It turns out that the $C^1$ case is easier to treat and that surprisingly low dimensional Euclidean spaces can be used. A closed n-manifold always has a $C^1$ isometric imbedding in $E^{2n}$. But to get a $C^3$ imbedding of an n-manifold with a $C^3$ metric I have (as of this writing) needed $1 \frac{1}{2} n^2 + 5 \frac{1}{2} n$ dimensions. One expects this number to be reduced, but it is clear that there will always be a sharp transition between the $C^1$ case and more differentiable imbeddings. At least $(n^2 + n)/2$ dimensions will be required beyond the $C^1$ case. This many dimensions were used in the analytic local theory.
+
+The $C^1$ proof uses a sequence of successive corrections applied to an initial initial imbedding of the manifold. In this process te first derivatives of the imbedding functions are kept carefully under control but the others grow without bound. So the limit imbedding is $C^1$ but not $C^2$.
+
+The corrections applied are ``spiralling" perturbations of the imbedding. Each perturbation is localized to a small area of the imbedding and is supposed to increase the metric in a certain direction, the direction of the ``spiralling". By piecing together an infinite sequence of these one ultimately obtains the desired imbedding. This process always acts to increase distances, so we must begin with what we call a ``short" imbedding, where all distances measured along paths in the manifold are less than they should be. Beginning with a short imbedding we can hope to ``stretch it out" until it is isometric.
+
+We can also obtain a result on isometric immersions from the proof of the imbedding theorem, so this is done. An immersion is defined, as by Whitney \cite{whitney1, whitney2}, to be a non-singular imbedding except that self-intersections are allowed.
+
+
+\subsection*{The proofs}
+
+Let us begin with a differentiable Riemannian $n$-manifold $M$ with a positive continuous metric tensor. We may regard $M$ as a $C^\infty$ manifold with a $C^0$ metric, using results of Whitney \cite{whitney1, whitney2} to justify the upgrading of the differentiability to $C^\infty$. We must start with a ``short" $C^\infty$ immersion of $M$ in some $E^k$. In using the term immersion we mean to include imbeddings too. The criterion for the immersion to be short can be given symbolically. Let $g_{ij}$ be the intrinsic metric; let ${x^i}$ be the internal coordinates in $M$, $1 \leq i \leq n$; and let ${z^\alpha}$ be the coordinates in the Euclidean space $E^k$. The immersion makes the $z^\alpha$ functions of the $x^i$ and the metric $h_{ij}$ induced by it is 
+
+\begin{equation}
+    h_{ij} = \sum_{\alpha} \frac{\partial z^\alpha}{\partial x^i} \frac{\partial z^\alpha}{\partial x^j}.
+\end{equation}
+
+The immersion is short if the difference $g_{ij} - h_{ij}$ is always a positive definite matrix.
+
+Given any immersion of a closed manifold in $E^k$ one obtains a short immersion by simply changing the scale in $E^k$, if necessary. For open manifolds it is not that simple and we have to make a construction, which is described later. For the present we may regard the short $C^\infty$ immersion as given.
+
+The correction process has an infinite sequence of ``stages". Each stage is like any other stage. The first stage of correction begins with the initial short immersion, the second begins with the immersion constructed by the first, etc. Each stage has the purpose of modifying the immersion so that the induced metric is closer to the intrinsic metric, but in such a way that the immersion is still short, although less so. Actually each stage should make approximately half the correction still needed at its beginning. For example the metric $\overline{h_{ij}}$ after the first stage should be
+
+\begin{equation}
+    \overline{h_{ij}} \approx h_{ij} + \frac{1}{2}(g_{ij} - h_{ij}) = g_{ij} - \frac{1}{2}(g_{ij} - h_{ij})
+\end{equation}
+
+\noindent
+and the remaing error would be
+
+\begin{equation}
+    g_{ij} - \overline{h_{ij}} \approx \frac{1}{2}(g_{ij} - h_{ij}).
+\end{equation}
+
+The errors involved in a stage are the reason for the infinite number of stages. Each succeeding stage must compensate the errors left from the one it follows. And because the stage process we use happens to be limited to positive changes in the metric we must leave over for each stage a portion of the originally needed positive metric correction. In this wap we can insure that each stage has a positive metric change to accomplish.
+
+Each stage is in turn divided into a large number of ``steps". A step affects only a local part of the immersion and produces an increase in the metric in only one direction (approximately). In order to divide a stage into steps we must have a certain type of covering of the manifold by neighborhoods. Each (closed cell) neighborhood should have $n$ $C^\infty$ non-singular parameters. No neighborhood should meet more than a finite number of others. Every point of $M$ should be interior to at least one neighborhood. We need not detail the rather standard construction of such a neighborhood system.
+
+Associated with each neighborhood, say $N_p$, we need a $C^\infty$ weighting function $\varphi_p$ which is positive interior to $N_p$ and zero on the boundary and outside $N_p$. These functions should be so balanced that at any point the sum of all the $\varphi_p$ is unity. This is also standard. These are used to distribute the correction ``load" of a stage among the neighborhoods.
+
+Within a neighborhood $N_p$ the ``load" is further subdivided into parts to be handled by the ``steps" associated with the neighborhood. Let
+
+\begin{equation}
+    \delta_{ij} = g_{ij} - h_{ij}
+\end{equation}
+
+\noindent
+be the amount by which the metric still needs to be increased after a number of stages have been performed, yielding a metric $h_{ij}$. At the next stage we try to increase the metric by approximately $\frac{1}{2} \delta_{ij}$ by a $C^\infty$ positive definite tensor $\beta_{ij}$ within $N_p$. The accuracy needed in this approximation will be discussed later.
+
+The division of the correction assigned to $N_p$ into steps depends on expressing $\frac{1}{2} \varphi_p \beta_{ij}$ as a special sort of sum:
+
+\begin{equation} \label{eq:special}
+    \frac{1}{2} \varphi_p \beta_{ij} = 
+    \sum_\nu a_\nu \frac{\partial \psi^\nu}{\partial x^i} \frac{\partial \psi^\nu}{\partial x^j}.
+\end{equation}
+
+Here the $x^i$ are the local parameters of $N_p$, the $a_\nu$ should be non-negative $C^\infty$ functions, and the $\psi^\nu$ are to be a finite number of linear functions of the $x^i$. Each step will correspond to one of the $\psi^\nu$. Observe that \eqref{eq:special} could not be satisfied if $\beta_{ij}$ were not positive definite within $N_p$.
+
+
+\begin{lemma}
+    Equation \eqref{eq:special} can be satisfied as required above.
+\end{lemma}
+
+\begin{proof}
+The positive definite symmetric matrices of rank $n$ form an $\frac{1}{2} n (n + 1)$ dimensional cone. We need a covering of this cone by open simplicial neighborhoods where the simplices lie entirely within the cone and are geometrical simplices, not merely topological. Each point of the cone must be interior to one of these simplices. And this covering must be ``uniformly star-finite", which means that no point should be in more than some fixed number $W$ of the simplices.
+
+It is a well known topologico-geometrical fact that such a covering can be obtained and that how large $W$ needs to be depends only on the dimensionality of the linear space involved. This dimensionality is here $\frac{1}{2} n (n + 1)$ so we may regard $W$ as a function of $n$.
+
+A matrix represented by a point interior to a simplex can be regarded as a sum with positive coefficients of the matrices represented by the vertices of te simplex. We want to set up a system by which each matrix of the cone is assigned a representation as such a weighted sum of matrices corresponding to vertices of the simplices of the covering. Let the set of coefficients
+
+\begin{equation}
+\begin{split}
+    & C_{1,1}; C_{1,2}; C_{1,3} \cdots \\
+    & C_{2,1}; C_{2,2};  \cdots \\
+    & \hspace*{0.5em} \cdot \\
+    & \hspace*{0.5em} \cdot \\
+    & \hspace*{0.5em} \cdot \\
+    & C_{q,1}; C_{q,2};  \cdots
+\end{split}
+\end{equation}
+
+\noindent
+be the coefficients for $q$ different representations of a matrix which is interior to $q$ of the covering simplices as a weighted sum of vertex matrices. We define new coefficients as
+
+\begin{equation}
+    C^*_{\mu, \nu} = \frac{C_{\mu, \nu} \exp \{ - \sum_\sigma 1/C_{\mu, \sigma}\}}
+    {\sum_\rho \exp \{ - \sum_\rho 1/C_{\rho, \sigma} \}}
+\end{equation}
+
+\noindent
+(trans. should inner sum be over $\sigma$?)
+\noindent
+where an exponential is to be regarded as zero if any of the coefficients appearing in the exponent are either zero or undefined. This is just a simple $C^\infty$ weighting device analogous to that used (the $\varphi_p$) for the neighborhoods. Now the matrix is a sum with positive coefficients of all the matrices which correspond to vertices of simplices containing it. Also the coefficients are $C^\infty$ functions of the matrix as it moves through the cone. For any particular matrix at most $[\frac{1}{2} n (n + 1) + 1] W$ of the $C^*_{\mu, \nu}$ can be non-zero.
+
+Now consider $\beta_{ij}$ as defining $C^\infty$ mapping of $N_p$ into this cone. Then the coefficients $C_{\mu, \nu}$ will become $C^\infty$ functions on $N_p$ and we can write
+
+\begin{equation} \label{eq:beta-ij}
+    \beta_{ij} = \sum_{\mu,\nu} C^*_{\mu, \nu} M_{(\mu,\nu)ij}
+\end{equation}
+
+\noindent
+where each $M_{(\mu,\nu)ij}$ is a matrix at a vertex of one of the simplices. For each vertex matrix $M_{(\mu,\nu)ij}$ we can obtain a set of $n$ unit orthogonal eigenvectors $\{V_r\}$ and $n$ associated positive eigenvalues $v_r$. Then if $\psi_r$ is for each $r$ the linear function of the local parameters for which  $\sqrt{v_r} V_r$ is the gradient vector we shall have
+
+\begin{equation} \label{eq:M-mu-nu}
+    M_{(\mu,\nu)ij} = \sum_r \frac{\partial \psi_r}{\partial x^i} \frac{\partial \psi_r}{\partial x^i}
+\end{equation}
+
+\noindent
+(trans. should second partial be wrt $x^j$?)
+
+Now all we need do is to put \eqref{eq:beta-ij} and \eqref{eq:M-mu-nu} together and multiply the coefficients by $\frac{1}{2} \varphi_p$ and we have satisfied \eqref{eq:special} as desired. Also this has been done in such a way that there are never more than $n [\frac{1}{2} n (n + 1) + 1] W$ of the coefficients $a_\nu$ of \eqref{eq:special} that are simultaneously non-zero. Furthermore only a finite number of coefficients $a_\nu$ will be involved with the neighborhood, because $N_p$ maps into a compact se in the (open) cone of matrices.
+
+\end{proof}
+
+\subsection*{The normal fields}
+
+In performing a step for a neighborhood $N_p$ we need two $C^\infty$ unit orthogonal vector fields normal to the immersion of $N_p$. If $\zeta^\alpha$ and $\eta^\alpha$ denote these fields we should have 
+
+\begin{flalign}
+    \text{(Unit)} && \sum_\alpha (\zeta^\alpha)^2 & = 1 = \sum_\alpha (\eta^\alpha)^2 & 
+\end{flalign}
+
+\begin{flalign}
+    \text{(Orthogonal)} && \sum_\alpha \zeta^\alpha  \eta^\alpha & = 0 & 
+\end{flalign}
+
+\begin{flalign}
+    \text{(Normal)} && \sum_\alpha \zeta^\alpha \frac{\partial z^\alpha}{\partial x^i} & = 0 = 
+                        \sum_\alpha \eta^\alpha \frac{\partial z^\alpha}{\partial x^i} & 
+\end{flalign}
+
+\noindent
+and they should be represented by $C^\infty$ functions in $N_p$.
+
+if the immersion of $N_p$ is $C^\infty$ and non-singular before this step is performed one can prove that such fields exist in several ways. We need to assume that the dimensionality of $E^k$ satisfies $k \geq n + 2$. And the neighborhood should be a closed cell, of course. The existence of the fields follows from a general theorem on fibre bundles [see Steenrod \cite{steenrod} Th. 6. 7 page 25, Cor. 11.6 page 5.3]. Also they could be obtained by orthogonal propagation.
+
+\subsection*{The step device}
+
+Each step associated with a stage and a neighbourhood $N_p$ is intended to give a metric change approximately equal to one term of the sum in equation \eqref{eq:special}. For the step associated with $a_\nu$ and $\psi^\nu$ we define perturbed immersion functions $\bar{z}^\alpha$ by the equation
+
+\begin{equation}
+    \bar{z}^\alpha = z^\alpha + \zeta^\alpha \frac{\sqrt{a_\nu}}{\lambda} \cos \lambda \psi^\nu +
+                            \eta^\alpha \frac{\sqrt{a_\nu}}{\lambda} \sin \lambda \psi^\nu
+\end{equation}
+
+\noindent
+where $\lambda$ is a large positive constant that we shall use to control the accuracy of the effect. The metric change will be 
+
+\begin{equation}
+\end{equation}
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{schlaefli}
+    Schlaefli.
+
+\bibitem{janet}
+    Janet.
+
+\bibitem{cartan}
+    Cartan.
+
+\bibitem{whitney1}
+    Whitney.
+        
+\bibitem{whitney2}
+    Whitney.
+        
+\bibitem{steenrod}
+    Steenrod.
+        
+\end{thebibliography}
+
+\end{document}
