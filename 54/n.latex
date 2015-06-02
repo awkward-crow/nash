@@ -146,11 +146,11 @@ In performing a step for a neighborhood $N_p$ we need two $C^\infty$ unit orthog
     \text{(Unit)} && \sum_\alpha (\zeta^\alpha)^2 & = 1 = \sum_\alpha (\eta^\alpha)^2 & 
 \end{flalign}
 
-\begin{flalign}
+\begin{flalign} \label{eq:Orthogonal}
     \text{(Orthogonal)} && \sum_\alpha \zeta^\alpha  \eta^\alpha & = 0 & 
 \end{flalign}
 
-\begin{flalign}
+\begin{flalign} \label{eq:Normal}
     \text{(Normal)} && \sum_\alpha \zeta^\alpha \frac{\partial z^\alpha}{\partial x^i} & = 0 = 
                         \sum_\alpha \eta^\alpha \frac{\partial z^\alpha}{\partial x^i} & 
 \end{flalign}
@@ -164,7 +164,7 @@ if the immersion of $N_p$ is $C^\infty$ and non-singular before this step is per
 
 Each step associated with a stage and a neighbourhood $N_p$ is intended to give a metric change approximately equal to one term of the sum in equation \eqref{eq:special}. For the step associated with $a_\nu$ and $\psi^\nu$ we define perturbed immersion functions $\bar{z}^\alpha$ by the equation
 
-\begin{equation}
+\begin{equation} \label{eq:perturb}
     \bar{z}^\alpha = z^\alpha + \zeta^\alpha \frac{\sqrt{a_\nu}}{\lambda} \cos \lambda \psi^\nu +
                             \eta^\alpha \frac{\sqrt{a_\nu}}{\lambda} \sin \lambda \psi^\nu
 \end{equation}
@@ -172,8 +172,36 @@ Each step associated with a stage and a neighbourhood $N_p$ is intended to give 
 \noindent
 where $\lambda$ is a large positive constant that we shall use to control the accuracy of the effect. The metric change will be 
 
-\begin{equation}
+\begin{equation} \label{eq:metric-change}
+	\sum_\alpha \frac{\partial \bar{z}^\alpha}{\partial x^i} \frac {\partial\bar{z}^\alpha }{\partial x^j} 
+		    - \sum_\alpha \frac{\partial z^\alpha}{\partial x^i} \frac{\partial z^\alpha}{\partial x^j}
 \end{equation}
+
+\noindent
+We can avoid computing this in detail because many of the terms would contain $1/\lambda$ or $1/\lambda^2$. These will be made small by using $\lambda$ sufficiently large. Such a term would be of the form
+
+
+\begin{equation}
+	\left[ \begin{array}{c} 1/\lambda \\ \text{or} \\ 1/\lambda^2 \end{array} \right] \cdot
+	\left[ \begin{array}{c} \sin \lambda \psi^\nu \text{or} \cos \lambda \psi^\nu\\ \text{or a product of these} \\ \text{or a square of either} \end{array} \right] \cdot
+	f
+\end{equation}
+
+\noindent
+where $f$ would not involve $\lambda$ and would be a $C^\infty$ function zero on the boundary of $N_p$ and outside $N_p$. Such a term approaches zero uniformly as $\lambda \rightarrow \infty$.
+
+Another type of term contains only first derivatives of $z^\alpha$. One such term comes from the first part of \eqref{eq:metric-change} and cancels with the subtracted second part.
+
+Any other term must come from the differentiation of the trigonometric functions appearing in \eqref{eq:perturb}. When $\cos \lambda \psi^\nu$ or $\sin \lambda \psi^\nu$ is differentiated we get a $\lambda$ in the numerator to cancel the one in the denominator. Some of these involve only oner trigonometric functions and a derivative of $z^\alpha$. The sum of these terms is 
+
+\begin{equation}
+	\sum_\alpha \frac{\partial z^\alpha}{\partial x^i} \zeta^\alpha \sqrt{a_r} (- \sin \lambda \psi^\nu) \frac{\partial x^\nu}{\partial x^j} + \sum_\alpha \frac{\partial z^\alpha}{\partial x^i} \eta^\alpha \sqrt{a_r} (\cos \lambda \psi^\nu) \frac{\partial x^\nu}{\partial x^j}
+\end{equation}
+
+\noindent
+plus two other summations with $i$ and $j$ interchanged. Equation \eqref{eq:Normal}, expressing the normality of $\zeta^\alpha$ and $\eta^\alpha$ to the immersion, makes each of the four summations vanish.
+
+The remaining terms will contain two trigonometric functions or a square of one. Those that contain $(\cos \lambda \psi^\nu)(\sin \lambda \psi^\nu)$ will also contain $\zeta^\alpha \eta^\alpha$ and the summation over $\alpha$ will make them cancel by virtue of the orthogonality of $\zeta^\alpha$ and $\eta^\alpha$, equation \eqref{eq:Orthogonal}. The terms with trigonometric squares collect to
 
 
 
